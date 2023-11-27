@@ -1,6 +1,6 @@
 const status = ["backlog", "todo", "in progress", "done", "canceled"];
 const priority = ["No priority", "Low", "Medium", "High", "Urgent"];
-var colorArray = ['#FF0909', '#FFBC17', '#1744FF', '#9D17FF', '#FF17F3', '#FF1760', '#3366E6', '#999966', '#B34D4D', '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A',  '#FF99E6', '#FF1A66', '#E6331A', '#33FFCC', '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC',  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399', '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680',  '#4D8066', '#809980', '#999933', '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+const colorArray = ["#3498db", "#e74c3c", "#f39c12", "#9b59b6", "#1abc9c", "#d35400", "#2980b9", "#c0392b", "#f1c40f", "#8e44ad", "#2c3e50", "#e67e22", "#7f8c8d"];
 
 export const utility = {
     status,
