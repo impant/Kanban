@@ -1,21 +1,23 @@
+/* eslint-disable no-unused-vars */
 import {NameInitialsAvatar} from 'react-name-initials-avatar';
-import './userProfile.css';
+import './UserProfile.css';
 
 function UserProfile(props) {
   // eslint-disable-next-line react/prop-types
-  const { username, available } = props;
+  const { username, available, color, size, textSize, ...restProps } = props;
 
   return (
     <div className="user-profile">
       <div className={`online-bubble online-bubble-${available}`}></div>
       <NameInitialsAvatar
-        name={username}
-        size="30px"
+        name={username || "Placeholder"}
+        size={size || "30px"}
         borderStyle='none'
         borderWidth='0px'
-        bgColor='#0930A3'
+        bgColor={color || "#000000"}
         textColor='white'
         textWeight="node"
+        textSize={textSize || "16px"}
       />
     </div>
   );

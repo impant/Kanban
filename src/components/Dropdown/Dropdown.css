@@ -1,8 +1,6 @@
 .container-dropdown {
   position: relative;
   cursor: pointer;
-  z-index: 2;
-  width: fit-content;
 }
 
 .dropdown{
@@ -20,6 +18,7 @@
 .btn-text{
   display: flex;
 }
+
 .btn-text span:first-child{
   margin-right: 5px;
 }
@@ -49,6 +48,7 @@
 .box{
   background-color: white !important;
   border-radius: 8px;
+  z-index: 99999 !important;
 }
 
 .title-drop-down{
@@ -66,4 +66,8 @@
   background-color: lightgrey;
   border: 1px solid #ddd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider{
+  rotate: 90deg;
 }

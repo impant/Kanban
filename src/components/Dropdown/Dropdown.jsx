@@ -1,13 +1,12 @@
-import './Dropdown.css'; // Make sure to import the CSS file
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './Dropdown.css';
+import FeatherIcon from 'feather-icons-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useComponentVisible from '../../assests/hooks/useComponentVisible';
 
 const Dropdown = ({setOrder, setGroup}) => {
   const group = localStorage.getItem('group');
   const order = localStorage.getItem('order');
-  const {ref,parentRef, isComponentVisible, setIsComponentVisible} = useComponentVisible(false);
-  const [clicked, setClicked] = useState(isComponentVisible)
+  const {ref,parentRef, isComponentVisible} = useComponentVisible(false);
 
   const handleGroupChange = (e) => {
     setGroup(e.target.value.toLowerCase());
@@ -21,15 +20,15 @@ const Dropdown = ({setOrder, setGroup}) => {
   return (
     <div className="container-dropdown">
       <div role="button" ref = {parentRef} className='dropdown'>
-        <div>
-          <FontAwesomeIcon icon="fa-solid fa-filter" style={{color: "#000000",}} />
+        <div className='slider'>
+          <FeatherIcon icon="sliders" color="#6e7279" size="16px"/>
         </div>
         <div className="btn-text">
           <span>
             Display
           </span>
           <span>
-            <FontAwesomeIcon icon="fa-solid fa-chevron-down" style={{color: "#6e7279",}} />
+            <FontAwesomeIcon icon="fa-solid fa-chevron-down" style={{color: "#6e7279"}} />
           </span>
         </div>
       </div>

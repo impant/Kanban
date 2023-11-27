@@ -1,6 +1,6 @@
 import React from 'react'
 import Dropdown from '../Dropdown/Dropdown'
-import './navbar.css'
+import './Navbar.css'
 
 export default function Navbar({setGroup, setOrder, isBoxVisible, setIsBoxVisible}) {
   return (

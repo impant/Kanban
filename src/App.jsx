@@ -22,9 +22,10 @@ function App() {
         const res = await axios.get('https://api.quicksell.co/v1/internal/frontend-assignment');
         const tickets = res.data.tickets;
         const users = res.data.users;
-  
+        users.forEach(user => {
+          user.color=utility.colorArray[Math.floor(Math.random() * utility.colorArray.length)];
+        })
         let newData = {};
-  
         if (group === 'status') {
           utility.status.forEach(val => {
             newData[val.toLowerCase()] = [];
@@ -47,7 +48,6 @@ function App() {
             newData[utility.priority[ticket.priority].toLowerCase()].push(ticket);
           });
         }
-  
         setData(newData);
         setUsers(users);
       } catch (error) {
@@ -63,7 +63,7 @@ function App() {
       <Navbar setOrder={setOrder} setGroup={setGroup} isBoxVisible={isBoxVisible} setIsBoxVisible={setIsBoxVisible}/>
       <div className="tickets-section">
         {Object.keys(data).map((key, index) => (
-          <Section key={index} name={group !== "user" ? key : users.find(({id}) => id === key)?.name} tickets={data[key]} users={users} order={order} group={group}/>
+          <Section key={index} name={group !== "user" ? key : users.find(({id}) => id === key)?.name} available={group !== "user" ? undefined : users.find(({id}) => id === key)?.available} tickets={data[key]} users={users} order={order} group={group}/>
         ))}
       </div>
     </>
